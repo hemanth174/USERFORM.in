@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Register</title>
+</head>
+
+<body>
+  <style>
+    .heading {
+      font-size: 30px;
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 10px;
+      margin: 60px;
+    }
+
+    #password {
+      display: flex;
+      justify-self: center;
+      width: 50vw;
+      border-radius: 15px;
+      height: 40px;
+      border: 1px solid black;
+    }
+
+    #email {
+      display: flex;
+      justify-self: center;
+      width: 50vw;
+      border-radius: 15px;
+      border: 1px solid black;
+      height: 40px;
+    }
+
+    input::placeholder {
+      text-align: center;
+    }
+
+    input:focus-visible {
+      padding: 15px;
+    }
+
+    .buttonvalue1 {
+      border: 1px solid black;
+      border-radius: 20px;
+      display: flex;
+      justify-self: center;
+    }
+
+    #buttonvalue {
+      border: 1px solid black;
+      border-radius: 20px;
+      display: flex;
+      justify-self: center;
+    }
+
+    .login {
+      display: flex;
+      justify-content: flex-end;
+      border: 1px solid black;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .value {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px;
+    }
+
+    .paragraph1 {
+      display: flex;
+      justify-content: center;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .button2 {
+      border: 1px solid black;
+      border-radius: 5px;
+      background-color: white;
+    }
+
+    .paragraph1 a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      position: relative;
+      top: 15px;
+      margin-left: 10px;
+      border: 1px solid rgb(0, 0, 0);
+      padding: 2px;
+      border-radius: 10%;
+    }
+
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    input {
+      padding: 8px;
+      margin: 5px 0;
+      width: 300px;
+    }
+
+    #strengthBar {
+      width: 300px;
+      height: 10px;
+      background-color: #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    #strengthFill {
+      height: 100%;
+      width: 0%;
+      background-color: red;
+      transition: width 0.3s;
+    }
+
+    #strengthText {
+      margin-top: 5px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+    }
+
+    #toast {
+      visibility: hidden;
+      min-width: 250px;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      padding: 16px;
+      position: fixed;
+      z-index: 1;
+      right: 30px;
+      bottom: 30px;
+      font-size: 17px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    #toast.show {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(-20px);
+    }
+  </style>
+  <h1 class="heading">REGISTER</h1>
+  <form id="registerForm">
+
+    <input class="email" id=email type="email" name="email" placeholder="Your email Buddy" required><br>
+    <input class="name" id="password" type="password" name="password" placeholder="Your password Buddy" required><br>
+    <div class="center">
+      <div id="strengthBar">
+        <div id="strengthFill"></div>
+      </div>
+    </div>
+    <div id="strengthText"></div>
+    <button id="buttonvalue" type="submit">REGISTER here 🎉</button>
+    <div class="paragraph1">
+      <p>Already have an account? 
+        <div><a href="./login.html">LOGIN</a></div>
+      </p>
+    </div>
+    <p id="message"></p>
+    <div id="toast"></div>
+  </form>
+
+  <script>
+    //Password strength checker
+    const passwordInput = document.getElementById("password");
+    const strengthFill = document.getElementById("strengthFill");
+    const strengthText = document.getElementById("strengthText");
+
+    passwordInput.addEventListener("input", () => {
+      const pwd = passwordInput.value;
+
+      const hasLowercase = /[a-z]/.test(pwd);
+      const hasNumber = /[0-9]/.test(pwd);
+      const hasSpecial = /[!@#$%^&*(),.?":{}|<>_-]/.test(pwd);
+
+      let strength = 0;
+      if (hasLowercase) strength++;
+      if (hasNumber) strength++;
+      if (hasSpecial) strength++;
+      if (strength === 0) {
+        strengthFill.style.width = "0%";
+        strengthFill.style.backgroundColor = "red";
+        strengthText.innerText = "";
+      } else if (strength === 1) {
+        strengthFill.style.width = "33%";
+        strengthFill.style.backgroundColor = "red";
+        strengthText.innerText = "Weak ❌";
+        strengthText.style.color = "red";
+      } else if (strength === 2) {
+        strengthFill.style.width = "66%";
+        strengthFill.style.backgroundColor = "orange";
+        strengthText.innerText = "Medium ⚠️";
+        strengthText.style.color = "orange";
+      } else if (strength === 3) {
+        strengthFill.style.width = "100%";
+        strengthFill.style.backgroundColor = "green";
+        strengthText.innerText = "Strong ✅";
+        strengthText.style.color = "green";
+      }
+    });
+
+
+
+    //Toast message
+    function showToast(message, color = "#4CAF50") {
+      const toast = document.getElementById("toast");
+      toast.innerText = message;
+      toast.style.backgroundColor = color;
+      toast.className = "show";
+      setTimeout(() => {
+        toast.className = toast.className.replace("show", "");
+      }, 3000);
+    }
+
+
+
+    //registerForm
+    document.getElementById('registerForm').addEventListener('submit', async function (e) {
+      e.preventDefault(); // stop page reload
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        // Use a relative path so the request goes to the same origin the page was loaded from
+        // This allows dev-tunnel / public URLs to work instead of always calling localhost.
+        const res = await fetch('/submit-form', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        if (res.ok) {
+          showToast("Registration Successful 🎉", "#4CAF50");
+        } else {
+          showToast("Registration Failed ⚠️", "red");
+        }
+      } catch (err) {
+        showToast("Error connecting to server ⚠️", "red");
+      }
+    });
+  </script>
+</body>
+
+</html>

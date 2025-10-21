@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login</title>
+</head>
+
+<body>
+  <style>
+    body {
+      --webkit-user-select: none;
+      /* Chrome/Safari */
+      -moz-user-select: none;
+      /* Firefox */
+      -ms-user-select: none;
+      /* IE/Edge */
+      user-select: none;
+      /* Standard */
+    }
+
+    .heading {
+      font-size: 30px;
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 10px;
+      margin: 60px;
+    }
+
+    #password {
+      display: flex;
+      justify-self: center;
+      width: 50vw;
+      border-radius: 15px;
+      height: 40px;
+      border: 1px solid black;
+    }
+
+    #email {
+      display: flex;
+      justify-self: center;
+      width: 50vw;
+      border-radius: 15px;
+      border: 1px solid black;
+      height: 40px;
+    }
+
+    input::placeholder {
+      text-align: center;
+    }
+
+    input:focus-visible {
+      padding: 15px;
+    }
+
+    .buttonvalue1 {
+      border: 1px solid black;
+      border-radius: 15px;
+      display: flex;
+      justify-self: center;
+    }
+
+    #buttonvalue {
+      border: 1px solid black;
+      border-radius: 20px;
+      display: flex;
+      justify-self: center;
+    }
+
+    .login {
+      display: flex;
+      justify-content: flex-end;
+      border: 1px solid black;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .value {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px;
+    }
+
+    .paragraph1 {
+      display: flex;
+      justify-content: center;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .button2 {
+      border: 1px solid black;
+      border-radius: 5px;
+      background-color: white;
+    }
+
+    .paragraph1 a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      position: relative;
+      top: 15px;
+      margin-left: 10px;
+      border: 1px solid rgb(0, 0, 0);
+      padding: 2px;
+      border-radius: 10%;
+    }
+
+    #toast {
+      visibility: hidden;
+      min-width: 250px;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      padding: 16px;
+      position: fixed;
+      z-index: 1;
+      right: 30px;
+      bottom: 30px;
+      font-size: 17px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    #toast.show {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(-20px);
+    }
+  </style>
+  <h1 class="heading">Login</h1>
+  <form id="loginForm">
+    <input class="email" type="email" id="email" name="email" placeholder="Your email Buddy" required><br>
+    <input class="name" type="password" id="password" name="password" placeholder="Your Password Buddy" required><br>
+
+    <button class="buttonvalue1" id="buttonvalue1" type="submit">LOGIN here 🎉</button>
+    <div class="paragraph1">
+      <p>Didn't have account Register?
+      <div><a href="./register.html">Register</a></div>
+      </p>
+    </div>
+    <p id="message"></p>
+    <div id="toast"></div>
+  </form>
+  <div id="root"></div>
+  <script src="your-built-bundle.js"></script>
+  <script>
+
+    //Toast message
+    function showToast(message, color = "#4CAF50") {
+      const toast = document.getElementById("toast");
+      toast.innerText = message;
+      toast.style.backgroundColor = color;
+      toast.className = "show";
+      setTimeout(() => {
+        toast.className = toast.className.replace("show", "");
+      }, 3000);
+    }
+
+
+
+
+    //loginForm
+    // const messageEl = document.getElementById('message');
+    // document.getElementById('loginForm').addEventListener('submit', async function (e) {
+    //   e.preventDefault();
+    //   const email = document.getElementById('email').value;
+    //   const password = document.getElementById('password').value;
+    //   try {
+    //     const res = await fetch('http://localhost:3000/login/', {
+    //       method: 'POST',
+    //       headers: { 'Content-Type': 'application/json' },
+    //       body: JSON.stringify({ email, password })
+    //     });
+    //     if (res.ok) {
+    //       showToast("Login Successful ✅", "#4CAF50");
+    //     } else {
+    //       showToast("Login Failed ❌", "#f44336");
+    //     }
+    //     const data = await res.json();
+    //     alert(data.message);
+    //   } catch (err) {
+    //     showToast("Error connecting to server ⚠️", "red");
+    //     console.error("Error:", err);
+    //   }
+    // });
+
+  </script>
+</body>
+
+</html>

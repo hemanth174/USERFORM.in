@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>User Authentication - Multi-Language Support</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .language-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    
+    .language-selector select {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: #333;
+      font-size: 14px;
+      outline: none;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+    }
+    
+    .language-selector select:hover {
+      background: rgba(255, 255, 255, 1);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Language Selector -->
+  <div class="language-selector">
+    <select id="pageLanguageSelect">
+      <option value="en">English</option>
+      <option value="hi">हिंदी</option>
+      <option value="te">తెలుగు</option>
+    </select>
+  </div>
+
+  <script>
+    function display(sectionId) {
+      document.getElementById('signInSection').style.display = 'none';
+      document.getElementById('signUpSection').style.display = 'none';
+      document.getElementById('forgotPasswordPage').style.display = 'none';
+      document.getElementById(sectionId).style.display = 'block';
+    }
+  </script>
+  <section>
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <div id="signInSection" class="signin">
+      <div class="content">
+        <h2 data-translate="signIn">Sign In</h2>
+        <form id="loginForm">
+          <div class="form">
+            <div class="inputBox">
+              <input class="email" id="loginEmail" type="email" name="email" required>
+              <i data-translate="email">Email</i>
+            </div>
+            <div class="inputBox">
+              <input class="name" id="loginPassword" type="password" name="password" required>
+              <i data-translate="password">Password</i>
+            </div>
+            <div class="links">
+              <a href="#" onclick="display('forgotPasswordPage')" data-translate="forgotPassword">Forgot Password</a>
+              <a href="#" onclick="display('signUpSection'); return false;" data-translate="signUp">Sign Up</a>
+            </div>
+            <div class="inputBox">
+              <input type="submit" data-translate="login" value="Login">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="signUpSection" class="signin" style="display:none;">
+      <div class="content">
+        <h2 data-translate="signUp">Sign Up</h2>
+        <form id="registerForm">
+          <div class="form">
+            <div class="inputBox">
+              <input class="email" id="registerEmail" type="email" name="email" required>
+              <i data-translate="email">Email</i>
+            </div>
+            <div class="inputBox">
+              <input class="name" id="registerPassword" type="password" name="password" required>
+              <i data-translate="enterPassword">Enter Password</i>
+            </div>
+            <div class="links">
+              <a href="#" onclick="display('signInSection'); return false;">Already have an account? <span data-translate="signIn">Sign In</span></a>
+            </div>
+            <div class="inputBox">
+              <input type="submit" data-translate="register" value="Register">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="forgotPasswordPage" class="signin" style="display:none;">
+      <div class="content">
+        <h2 data-translate="forgotPassword">Update Password</h2>
+        <form id="forgotPasswordForm">
+          <div class="form">
+            <div class="inputBox">
+              <input id="forgetemail" class="email" type="email" name="email" required>
+              <i data-translate="email">Enter your Email</i>
+            </div>
+            <div class="inputBox">
+              <input id="forgotpassword" class="name" type="password" name="password" required>
+              <i data-translate="enterPassword">Enter New Password</i>
+            </div>
+            <div class="inputBox">
+              <input type="submit" data-translate="changePassword" value="Update Password">
+            </div>
+            <div class="links" style="justify-content: center;">
+              <a href="#" onclick="display('signInSection'); return false;">
+                Back to <span data-translate="signIn">Sign In</span>
+              </a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+         
+  </section>
+
+  <div id="toast-container"></div>
+  
+ <script>
+
+ </script>
+  <script type="module" src="./script.js"></script>
+</body>
+
+</html>

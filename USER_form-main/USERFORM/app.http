@@ -1,0 +1,47 @@
+GET http://localhost:3000/create-table/
+
+
+
+### Get Home Route
+GET http://localhost:3000/userdetails/
+Content-Type: application/json
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbWFudGhAMTIzQGdtYWlsLmNvbSIsImlhdCI6MTc1NTU5MzIyNn0.VtvxfAevB_2Yu6zmbMJfGeVdkTJVXpiqN7OSxkjU1_M
+### Post to Add User
+POST http://localhost:3000/submit-form
+Content-Type: application/json
+
+{
+  "password": "hemanth@123",
+  "email": "hemanth@123@gmail.com"
+}
+
+
+
+### Post to Add User
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "password": "hemanth@123",
+  "email": "hemanth@gmail.com"
+}
+
+
+
+
+
+
+
+
+
+### Put to ubdate User
+PUT http://localhost:3000/Udate_userdetails/
+Content-Type: application/json
+
+{
+  "email": "hemanthramasaia@gmail.com",
+  "password": "hemanth@123"
+}
+
+### Delete methos
+DELETE http://localhost:3000/DeleteUser/1
